@@ -17,9 +17,9 @@ func (l *L[T]) Get() T {
 	return l.v
 }
 
-func Lazy[T any](i func() T) *LR[T] {
-	return &LR[T]{
-		i: func() (T, error) { return i(), nil },
+func Lazy[T any](i func() T) *L[T] {
+	return &L[T]{
+		i: i,
 	}
 }
 
